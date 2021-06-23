@@ -1,0 +1,23 @@
+{
+  "name": "build-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CallMeSahu/build-exercises.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CallMeSahu/build-exercises/issues"
+  },
+  "homepage": "https://github.com/CallMeSahu/build-exercises#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
