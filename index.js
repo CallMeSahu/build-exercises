@@ -56,3 +56,51 @@ function typeOfTriangle(a, b, c){
     }
   }
 }
+
+//Array length
+function arrayLength(arr){
+  return arr.length;
+}
+
+//Return Index in an array
+function indexOf(arr, num){
+  for(var i=0; i<=arr.length; i++){
+    if(num === arr[i]){
+      return i;
+    }
+  }
+}
+
+//Replace element in an array
+function replace(arr, prev, next){
+  for(var i=0; i<=arr.length; i++){
+    if(arr[i] === prev){
+      arr[i] = next;
+    }    
+  }
+  return arr;
+}
+
+//Merge Arrays
+function mergeArray(arr1, arr2){
+  var mergedArray = arr1.concat(arr2);
+  return mergedArray;
+}
+
+//CharAt
+function charAt(str, pos){
+  return str.charAt(pos);
+}
+
+// Date compare
+function minDate(d1, d2){
+    const date1 = new Date(d1);
+    const date2 = new Date(d2);
+
+    if(date1 >= date2){
+      return d2
+    } else if(date1 < date2){
+      return d1
+    }
+}
+
