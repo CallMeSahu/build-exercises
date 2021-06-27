@@ -104,3 +104,50 @@ function minDate(d1, d2){
     }
 }
 
+//Encode String
+function encodeString(message, num){
+  var newMessage="";
+  for(var i=0; i<message.length; i++){
+    var character = message[i];
+
+    if(character.match(/[a-z]/i)){
+      newMessage += String.fromCharCode(message.charCodeAt(i)+num);
+    }
+    else{
+      newMessage += message[i];
+    }
+  }
+  return newMessage;
+}
+
+//Make first letter capital
+function toSentenceCase(str){
+  var words = str.split(" ");
+  for(var i=0; i<words.length; i++){
+    words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+  }
+  return words.join(" ");
+}
+
+//Sort Array
+function sortArray(arr){
+  for(var i=0; i<arr.length; i++){
+    for(var j=i; j<arr.length; j++){
+      if(arr[i] > arr[j]){
+        var temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
+      }
+    }
+  } 
+  return arr;
+}
+
+//Reverse character
+function reverseCharactersOfWord(str){
+  return str.split("").reverse().join("").split(" ").reverse().join(" ");
+}
+
+
+
+
