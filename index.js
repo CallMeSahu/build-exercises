@@ -75,7 +75,7 @@ for(var i=0; i<studentDetails.length; i++){
 }
 console.log("Lowest Scorer:",lowestName);
 console.log("Marks Scored", lowestMarks); 
-*/
+
 
 //Average marks in computer science
 var totalMarks = 0;
@@ -85,7 +85,38 @@ for(var i=0; i<studentDetails.length; i++){
   totalstudents++;
 }
 var averageInCS = totalMarks/totalstudents;
-console.log("Average Marks in computers:", averageInCS);
+console.log("Average Marks in computers:", averageInCS);*/
+
+//Grade, Pass or Fail
+const maxMarks = 400;
+var passedStudents = [];
+for(var i=0; i<studentDetails.length; i++){
+  var totalMarks = studentDetails[i].maths + studentDetails[i].science + studentDetails[i].english + studentDetails[i].computer; 
+  var percentage = (totalMarks/maxMarks)*100;
+  var grade = "";
+  if(percentage>=75){
+    grade = "A";
+  }
+  else if(percentage>=60 && percentage<75){
+    grade = "B";
+  }
+  else if(percentage>=35 && percentage<60){
+    grade = "C";
+  }
+  else if(percentage<35){
+    grade="D";
+  }
+  console.log("Name:",studentDetails[i].name);
+  console.log("Student Grade:", grade);
+  console.log("-----------------------")
+  if(percentage>35){
+    passedStudents.push(studentDetails[i].name);
+  }
+}
+console.log("***PASSED STUDENTS***")
+for(var i=0; i<passedStudents.length; i++){
+  console.log(passedStudents[i]);
+}
 
 
 
