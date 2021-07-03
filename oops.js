@@ -1,3 +1,4 @@
+//Question 1
 const studentDetails = [
 	{
 		roll: "1",
@@ -40,7 +41,7 @@ const studentDetails = [
 		computer: 60
 	}
 ];
-/* 
+
 //Print name and total marks
 for(var i=0; i<studentDetails.length; i++){
   console.log("Name:", studentDetails[i].name);
@@ -85,7 +86,7 @@ for(var i=0; i<studentDetails.length; i++){
   totalstudents++;
 }
 var averageInCS = totalMarks/totalstudents;
-console.log("Average Marks in computers:", averageInCS);*/
+console.log("Average Marks in computers:", averageInCS);
 
 //Grade, Pass or Fail
 const maxMarks = 400;
@@ -116,7 +117,109 @@ for(var i=0; i<studentDetails.length; i++){
 console.log("***PASSED STUDENTS***")
 for(var i=0; i<passedStudents.length; i++){
   console.log(passedStudents[i]);
+} 
+
+//Question 2
+ class Employee {
+  constructor(name, id, basicSalary, hra, allowance){
+    this.name = name;
+    this.id = id;
+    this.basicSalary = basicSalary;
+    this.hra = hra;
+    this.allowance = allowance;
+  }
+
+  getSalary(){
+    return this.basicSalary+this.hra+this.allowance;
+  }
 }
 
+const siddhartha = new Employee("Siddhartha", "#001", 30000, 5000, 2000);
+const rahul = new Employee("Rahul", "#002", 25000, 7000, 3500);
+
+console.log("Rahul's Net Salary:",rahul.getSalary());
+console.log("Siddhartha's Net Salary:",siddhartha.getSalary()); 
+
+//Question 3
+class BankAccount {
+  constructor(name, number, balance, type, ifsc){
+    this.name = name;
+    this.number = number;
+    this.balance = balance;
+    this.type = type;
+    this.ifsc = ifsc;
+  }
+}
+
+const haramal = new BankAccount("Haramal", "#0010", 50490, "currents", "SBI#00123");
+const siddhartha = new BankAccount("Siddhartha", "#0020", 15400, "savings", "SBI#00123");
+const wayne = new BankAccount("Wayne", "#0070", 20480, "savings", "SBI#00123");
+
+console.log("Customer Name:", haramal.name);
+console.log("Account Balance:",haramal.balance);
+console.log("------------------------");
+console.log("Customer Name:", siddhartha.name);
+console.log("Account Balance:",siddhartha.balance);
+console.log("------------------------");
+console.log("Customer Name:", wayne.name);
+console.log("Account Balance:",wayne.balance);
+console.log("------------------------");
+
+//Question 4
+const cartItems = [
+	{
+		id: "101",
+		name: "Oreo",
+		count: 2,
+		price: 30.0,
+		discount: 0.18
+	},
+	{
+		id: "102",
+		name: "Red Bull",
+		count: 1,
+		price: 99.0,
+		discount: 0.15
+	},
+	{
+		id: "103",
+		name: "Dairy Milk Silk",
+		count: 3,
+		price: 175.0,
+		discount: 0.05
+	},
+	{
+		id: "104",
+		name: "Pulse Candy Pack",
+		count: 1,
+		price: 135.0,
+		discount: 0.2
+	}
+];
+
+//Total no. of Items
+var noOfitems = 0;
+for(var i=0; i<cartItems.length; i++){
+  noOfitems += cartItems[i].count;
+}
+console.log("Total Items:", noOfitems);
+
+// Total cart Value
+var cartValue = 0;
+for(var i=0; i<cartItems.length; i++){
+  cartValue += cartItems[i].count * cartItems[i].price;
+}
+console.log("Total Price: ₹"+cartValue.toFixed(2));
+
+//Total discounted Value
+var discountedValue = 0;
+for(var i=0; i<cartItems.length; i++){
+  discountedValue += cartItems[i].count *cartItems[i].discount;
+}
+console.log("Total Discount: ₹"+discountedValue.toFixed(2));
+
+var totalTax = 0;
+totalTax = ((cartValue-discountedValue)*0.18);
+console.log("Total Tax: ₹"+totalTax.toFixed(2));
 
 
